@@ -19,45 +19,6 @@ namespace EasyConv
         string[] fileLines;
         List<Channel> channels;
 
-        //private int progrMax;
-
-        //public int ProgrMax
-        //{
-        //    get { return progrMax; }
-        //    set
-        //    {
-        //        progrMax = value;
-        //        progrValue = string.Format("{0}/{1}", progrCurrent, ProgrMax);
-        //        progressBar1.Maximum = value;
-        //    }
-        //}
-
-        //private int progrCurrent;
-
-        //public int ProgrCurrent
-        //{
-        //    get { return progrCurrent; }
-        //    set
-        //    {
-        //        progrCurrent = value;
-        //        //PropValue = propCurrent + "/" + propmax
-        //        progrValue = string.Format("{0}/{1}",progrCurrent,ProgrMax);
-        //        progressBar1.Value = value;
-        //    }
-        //}
-
-        //private string progrValue;
-
-        //public string ProgrValue
-        //{
-        //    get { return progrValue; }
-        //    set
-        //    {
-        //        progrValue = value;
-        //        progress.Text = value;
-        //    }
-        //}
-
         BackgroundWorker congfigureBg;
         BackgroundWorker writeToFileBg;
 
@@ -259,12 +220,13 @@ namespace EasyConv
 
                 using (w)
                 {
+                    w.WriteLine("#MAMAEXT");
                     for (int i = 0; i < channels.Count; i++)
                     {
                         writeToLog(channels[i].ToString());
 
                         //w.WriteLine(string.Format("{0}\n{1}\n---------------------"), channels[i].ChannelName, channels[i].ChannelURL);
-                        w.WriteLine(channels[i].ChannelName + Environment.NewLine + channels[i].ChannelURL + Environment.NewLine + "---------------------");
+                        w.WriteLine("ChannelName!"+channels[i].ChannelName + Environment.NewLine + "ChannelURL!" +channels[i].ChannelURL + Environment.NewLine + "---------------------");
 
                         writeToLog("Written successfully");
                         writeToLog("----------------------------------------------" + Environment.NewLine);
