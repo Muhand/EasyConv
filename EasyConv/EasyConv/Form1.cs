@@ -85,8 +85,8 @@ namespace EasyConv
             writeToFileBg.WorkerReportsProgress = true;
 
 
-            //m3u8Dialog.InitialDirectory = "c:\\";
-            m3u8Dialog.InitialDirectory = @"C:\Users\Muhand\Desktop\IPTV Channels\arabic.m3u";
+            m3u8Dialog.InitialDirectory = "c:\\";
+            //m3u8Dialog.InitialDirectory = @"C:\Users\Muhand\Desktop\IPTV Channels\arabic.m3u";
             m3u8Dialog.Filter = "m3u files (*.m3u)|*.m3u|m3u8 files (*.m3u8)|*.m3u8";
             m3u8Dialog.FilterIndex = 1;
             m3u8Dialog.RestoreDirectory = true;
@@ -248,13 +248,13 @@ namespace EasyConv
 
         private void writeToFile()
         {
-            writeToLog("Now writing to channels.conf" + Environment.NewLine);
+            writeToLog("Now writing to channels.mama" + Environment.NewLine);
             //progrCurrent = 0;
             //ProgrMax = channels.Count;
             writeToFileBg.ReportProgress(0);
             try
             {
-                //StreamWriter w = new StreamWriter("channels_" + DateTime.Now.ToString("dd-MM-yyyy") + ".conf");
+                //StreamWriter w = new StreamWriter("channels_" + DateTime.Now.ToString("dd-MM-yyyy") + ".mama");
                 StreamWriter w = new StreamWriter(fileName.Text);
 
                 using (w)
@@ -272,17 +272,17 @@ namespace EasyConv
                     }
                 }
                 w.Close();
-                writeToLog(channels.Count+ " channels were written to channels.conf successfully");
+                writeToLog(channels.Count+ " channels were written to channels.mama successfully");
             }
             catch (Exception ex)
             {
-                writeToLog(String.Format("There was an error writing to channels.conf, original error is: {0}", ex.Message));
+                writeToLog(String.Format("There was an error writing to channels.mama, original error is: {0}", ex.Message));
             }
         }
 
         private void resetFileName_Click(object sender, EventArgs e)
         {
-            fileName.Text = "channels.conf";
+            fileName.Text = "channels.mama";
         }
     }
 }
